@@ -222,5 +222,5 @@ class Pre_game:
         if pyxel.btn(pyxel.KEY_SPACE):
             self.app.start()
 
-app = App()
-pre_game = Pre_game(app)
+
+pre_game = Pre_game(App())

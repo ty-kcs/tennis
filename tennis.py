@@ -29,9 +29,9 @@ class Racquet:
         
     def update(self):
         if pyxel.btnp(pyxel.KEY_LEFT):
-            self.angle += 7
+            self.angle += 3
         if pyxel.btnp(pyxel.KEY_RIGHT):
-            self.angle -= 7
+            self.angle -= 3
     def draw(self):
         pyxel.line(self.center_x - self.w/2 * pyxel.cos(self.angle) - self.h/2 * pyxel.sin(self.angle),self.center_y + self.w/2 * pyxel.sin(self.angle) - self.h/2 * pyxel.cos(self.angle),self.center_x - self.w/2 * pyxel.cos(self.angle) + self.h/2 * pyxel.sin(self.angle),self.center_y + self.w/2 * pyxel.sin(self.angle) + self.h/2 * pyxel.cos(self.angle), self.color) #左の縦線
          
@@ -104,7 +104,7 @@ class Target:
     
     def hit(self, ball):
         #座標が一致していれば
-        if (ball.y <= 5 and ball.x >= self.x and ball.x <= self.x + Target.length) and ball.vy < 0:
+        if (ball.y <= 5 and ball.x >= self.x -2 and ball.x <= self.x + Target.length + 2) and ball.vy < 0:
             return True
         #そうでなければ
         else:
@@ -221,6 +221,5 @@ class Pre_game:
     def update(self):
         if pyxel.btn(pyxel.KEY_SPACE):
             self.app.start()
-
 
 pre_game = Pre_game(App())

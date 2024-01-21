@@ -219,7 +219,7 @@ class Pre_game:
         pyxel.text(10, 175, "Aim at the target!", 7)
 
     def update(self):
-        if pyxel.btn(pyxel.KEY_SPACE):
+        if pyxel.btn(pyxel.KEY_U):
             self.app.start()
 
 app = App()
